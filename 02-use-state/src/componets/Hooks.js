@@ -8,8 +8,8 @@ const Hooks = () => {
   */
   const [nombre, setNombre] = useState('Pepe'); // Corrección en la desestructuración
 
-  const CambiarNombre = () => {
-    setNombre('Miguel');
+  const CambiarNombre = (e, nombreFijo) => {
+    setNombre(nombreFijo);
   };
 
   return (
@@ -17,7 +17,13 @@ const Hooks = () => {
       <h1>Trabajando con el hook useState de React.js</h1>
 
       <div>
-        <p>{nombre}</p>
+        <label>{nombre}</label>
+        {/* El evento onKeyUp es un evento de teclado que se ejecuta cuando el usuario suelta la tecla. */}
+        <input 
+          type='text'
+          onKeyUp={e => CambiarNombre(e, e.target.value)} 
+          placeholder='Ingresa tu nombre'
+        />
         <button onClick={CambiarNombre}>Cambiar nombre</button>
       </div>
     </>
