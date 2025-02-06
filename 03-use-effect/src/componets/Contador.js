@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Componente from './Componente';
 
 const Contador = ({ titulo }) => {
     const [contador, setContador] = useState(0);
@@ -26,6 +27,10 @@ const Contador = ({ titulo }) => {
             <div className='contador'>
                 <button onClick={sumar}>+</button>
                 <strong style={{ color: contador < 0 ? 'red' : contador === 0 ? 'black' : 'green' }}>
+                    {/* Esta es una forma de cambiar los estilos de un elemento con un operador ternario. */}
+                    { contador >= 5 && console.log('Psamos los 5 en el contador') }
+                    {/* Esta es una forma de poder montar y desmontar un componente. */}
+                    { contador >= 10 && <Componente titulo={'Mira este componente'}/> } 
                     {contador}
                 </strong>
 
