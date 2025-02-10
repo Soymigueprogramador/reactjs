@@ -38,3 +38,21 @@ strong {
     text-align: center;
     font-size: 50px;
 }
+
+.user-container {
+    width: 100%;
+    min-height: 100vh; 
+    background-color: #1c1c1c;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; 
+    color: #fff;
+    padding: 20px; 
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
