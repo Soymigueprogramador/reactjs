@@ -1,0 +1,62 @@
+.general {
+  width: 100%;
+  height: 100%;
+  background-color: #1c1c1c;
+  border: 2px solid #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.enviado {
+    text-align: center;
+    color: blueviolet;
+}
+
+label {
+    text-align: left;
+    color: #fff;
+}
+
+input {
+    display: block;
+    padding: 5px;
+    margin: 10px;
+    max-width: 250px;
+    min-width: 250px;
+    margin-top: 30px;
+}
+
+select {
+    max-width: 263px;
+    min-width: 263px;
+}
+
+textarea {
+    max-width: 263px;
+    min-width: 263px;
+}
+
+select, textarea {
+    display: block;
+    margin: 10px auto;
+    max-width: 263px;
+    min-width: 263px;
+}
+
+.btn {
+    max-width: 263px;
+    min-width: 263px;
+    border: none;
+    background-color: blue;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: green;
+}
