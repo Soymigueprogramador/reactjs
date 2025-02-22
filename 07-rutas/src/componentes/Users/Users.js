@@ -1,25 +1,63 @@
-/* En este componente mostramos como pasar parametros y mostrarlos por pantalla. */
-
-import { useParams } from "react-router-dom"
-
+import { useParams, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Users = () => {
-    // Parametros por defecto
-    //const { nombre = 'Miguel', apellido = 'Salazar' } = useParams(); 
-
-    // Parametros opcionales.
     let { nombre, apellido } = useParams();
+    const [formData, setFormData] = useState({ nombre: "", apellido: "" });
+    const navigate = useNavigate();
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (formData.nombre.trim() === "" || formData.apellido.trim() === "") {
+            navigate("/inicio");
+        } else if( nombre === 'contacto' ) {
+            navigate('/contacto')
+        } else {
+            navigate(`/users/${formData.nombre}/${formData.apellido}`);
+        }
+    }; 
 
     return (
         <>
-            {
-                !nombre && <h1> No estas logeado </h1>
-            }
-            {
-                nombre && <h1> Esta es la pagina del usuario { nombre } { apellido } </h1>
-            }
-        </>
-    )
-}
+            { !nombre || !apellido ? (
+                <h1>No estás logeado</h1>
+            ) : (
+                <h1>Esta es la página del usuario {nombre} {apellido}</h1>
+            )}
 
-export default Users
+            <form onSubmit={handleSubmit}>
+                <label>Nombre</label>
+                <input 
+                    type="text" 
+                    name="nombre" 
+                    placeholder="Ingresa tu nombre" 
+                    value={formData.nombre} 
+                    onChange={handleChange} 
+                    required 
+                />
+
+                <label>Apellido</label>
+                <input 
+                    type="text" 
+                    name="apellido" 
+                    placeholder="Ingresa tu apellido" 
+                    value={formData.apellido} 
+                    onChange={handleChange} 
+                    required 
+                />
+
+                <input type="submit" value="Enviar" />
+            </form>
+        </>
+    );
+};
+
+export default Users;
