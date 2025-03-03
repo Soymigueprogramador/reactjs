@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style-type: none;
+}
+
+body {
+  background-color: black;
+}
+
+h1, h2, h3, h4, p, ol {
+  text-align: center;
+  color: #fff;
+}
+
+input {
+  padding: 20px;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.lista {
+  width: 30%;
+  height: 100%;
+  background-color: #1c1c1c;
+  border: 2px solid #fff;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 100px;
+  height: 25px;
+  background-color: blue;
+  color: #fff;
+  border: none;
+  margin-top: 10px;
+  margin: 20px;
+}
+
+.tareas {
+  width: 50%;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-tareas {
+  width: 15%;
+  padding: 28px;
+  font-weight: bold;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-tareas:hover {
+  background-color: green;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.campo-tareas {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 100%;
+  border: 3px solid #fff;
+  justify-content: center;
+}
