@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Juegos from "./componets/Juegos.js"
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <h1> Repaso con el hook useReducer </h1>
+      <p>
+        useReducer:
+        Es un hook que nos permite trabajar con los estados al igual que 'useState'. <br></br>
+        Con para particulariadad que en este hook usamos una funcion reductora y que ademas es asincrona, <br></br>
+        nos permite pasarle un estado y es alli dentro donde se haran las modificaciones del mismo. <br></br>
+      </p>
+      <hr></hr>
+
+      <Juegos />
+    </>
+  )
 }
 
-export default App;
+export default App
